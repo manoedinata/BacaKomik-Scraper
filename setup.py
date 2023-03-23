@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="bacakomikscraper",
-    version="0.1",
+    version="0.2",
     author="manoedinata",
     author_email="manoedinata@gmail.com",
     description="BacaKomik.co Scraper",

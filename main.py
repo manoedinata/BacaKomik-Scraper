@@ -1,4 +1,4 @@
-from scraper import Scraper
+from bacakomikscraper import Scraper
 
 scraper = Scraper()
 
