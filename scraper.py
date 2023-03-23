@@ -15,11 +15,6 @@ class Scraper(object):
         self.BK_COMIC_URL = BK_COMIC_URL
         self.BK_CHAPTER_URL = BK_CHAPTER_URL
 
-        self.search_result = {}
-        self.comic_info = {}
-        self.comic_eps = []
-        self.comic_images = []
-
         self.session = requests.Session()
 
     def req_parse(self, URL):
@@ -33,8 +28,8 @@ class Scraper(object):
 
         # Parse elements
         animepost = access.find_all("div", {"class": "animepost"})
+        results = []
         if animepost:
-            results = []
             for anime in animepost:
                 anchor = anime.find("a")
                 image = anime.find("img")
@@ -103,6 +98,7 @@ class Scraper(object):
         self.comic_eps = chapters
 
     def get_ep_images(self, chapter_slug):
+        self.comic_images = []
         access = self.req_parse(self.BK_CHAPTER_URL + chapter_slug)
 
         imagesEl = access.find("div", {"id": "chimg-auh"}).find_all("img")
