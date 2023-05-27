@@ -8,7 +8,7 @@ print(scraper.search_result)
 
 # Get comic info
 scraper.get_comic_info("detective-conan")
-print(scraper.comic_info)
+# print(scraper.comic_info)
 
 # List chapters
 print(scraper.comic_eps)

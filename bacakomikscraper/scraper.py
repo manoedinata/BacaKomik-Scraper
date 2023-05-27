@@ -97,6 +97,8 @@ class Scraper(object):
         self.comic_info = data
         self.comic_eps = chapters
 
+        return self.comic_info
+
     def get_ep_images(self, chapter_slug):
         self.comic_images = []
         access = self.req_parse(self.BK_CHAPTER_URL + chapter_slug)
